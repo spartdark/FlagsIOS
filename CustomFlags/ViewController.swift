@@ -10,8 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var infoLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        #if SANDBOX
+        infoLabel.text = "Estoy en modo SandBox"
+        #else
+        infoLabel.text = "Estoy en produccion"
+        #endif
         // Do any additional setup after loading the view, typically from a nib.
     }
 
